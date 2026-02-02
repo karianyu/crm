@@ -72,6 +72,7 @@ class CRMLead(Document):
 		self.set_sla()
 
 	def validate(self):
+		self.mobile_no = self.mobile_no.replace(" ","") if self.mobile_no else self.mobile_no
 		self.set_full_name()
 		self.set_lead_name()
 		self.set_title()
