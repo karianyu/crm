@@ -15,7 +15,7 @@ from crm.utils import get_dynamic_linked_docs, get_linked_docs, is_frappe_versio
 
 COUNT_NAME = (
 	{"COUNT": "name", "as": "total_count"}
-	if is_frappe_version("16", above=True)
+	if is_frappe_version("17", above=True)
 	else "count(name) as total_count"
 )
 
@@ -560,7 +560,7 @@ def get_data(
 		"page_length_count": page_length_count,
 		"is_default": is_default,
 		"views": get_views(doctype),
-		# "total_count": frappe.get_list(doctype, filters=filters, fields=[COUNT_NAME])[0].total_count,
+		"total_count": frappe.get_list(doctype, filters=filters, fields=[COUNT_NAME])[0].total_count,
 		"row_count": len(data),
 		"form_script": get_form_script(doctype),
 		"list_script": get_form_script(doctype, "List"),
