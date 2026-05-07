@@ -103,7 +103,8 @@ def get_standard_dropdown_items():
 
 
 def after_migrate():
-	sync_table("dropdown_items", "standard_dropdown_items")
+	# sync_table("dropdown_items", "standard_dropdown_items")
+	pass
 
 
 def sync_table(key, hook):
